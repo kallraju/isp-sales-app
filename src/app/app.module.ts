@@ -9,6 +9,7 @@ import { NEWCAFComponent } from './new-caf/new-caf.component';
 import { CAFStatusComponent } from './caf-status/caf-status.component';
 import { SalesReportComponent } from './sales-report/sales-report.component';
 import { TaskComponent } from './task/task.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TaskComponent } from './task/task.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     
   ],
   providers: [],
