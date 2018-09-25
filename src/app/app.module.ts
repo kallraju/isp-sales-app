@@ -27,16 +27,13 @@ import { HttpTokenInterceptService } from './http-token-intercept.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
-    HttpTokenInterceptService
+    HttpClientModule
     ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpTokenInterceptService,
-      multi: true
-    }
-  ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpTokenInterceptService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
