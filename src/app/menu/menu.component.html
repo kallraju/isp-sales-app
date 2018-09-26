@@ -21,10 +21,11 @@
 <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
 <ul class="navbar-primary-menu">
 <li>
-  <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">NEW CAF</span></a>
+  <a [routerLink]="['new-caf']"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">NEW CAF</span></a>
   <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">CAF status</span></a>
   <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">sales Report</span></a>
   <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">task</span></a>
   </li>
 </ul>
 </nav>
+<div  class="main-content"><router-outlet></router-outlet></div>
