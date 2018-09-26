@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { NEWCAFComponent } from './new-caf/new-caf.component';
+import { CAFStatusComponent } from './caf-status/caf-status.component';
 const routes: Routes = [
 {path:'', component:LoginComponent},
-  {path:'menu', component:MenuComponent}
+  {path:'caf-status', component: CAFStatusComponent},
+  
 ];
 
 @NgModule({
