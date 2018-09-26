@@ -15,14 +15,30 @@ username;
 password;
   constructor(private objService:ServiceService,private objrouter:Router) { 
     this.frm=new FormGroup({
-     un: new FormControl('',[Validators.required, Validators.minLength(2), Validators.maxLength(5)]),
-     ps: new FormControl('',[Validators.required, Validators.minLength(2), Validators.maxLength(5)])
+     un: new FormControl('',[Validators.required]),
+     pwd: new FormControl('',[Validators.required])
     });
 
     this.username=this.frm.controls["un"];
-    this.password=this.frm.controls["ps"];
+    this.password=this.frm.controls["pwd"];
   }
- 
+  onSubmit() {
+this.objService.login(this.frm.value).subscribe(data => {
+    this.lData = data;
+    alert(JSON.stringify(this.lData));
+     if (this.lData !== undefined && this.lData.status === 1) {
+            localStorage.setItem('Id', this.lData.user_id);
+            this.objrouter.navigate(['menu'])
+      } else if (this.lData !== undefined && this.lData.status === 0) {
+            localStorage.removeItem('Id');
+            this.Status = 'Please provide valid username and password';
+           }
+         },
+         err =>  {
+           this.Status = 'Something went wrong please try again';
+         });
+       }
+
 }
 
  

@@ -16,7 +16,7 @@ export class HttpTokenInterceptService {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     request = request.clone({
       setHeaders: {
-        Authorization: `Bearer ${localStorage.getItem('U_Id')}`
+        Authorization: `Bearer ${localStorage.getItem('Id')}`
       }
     });
     return next.handle(request);

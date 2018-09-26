@@ -7,10 +7,11 @@ import { CanActivate, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ServiceService implements CanActivate {
-    urlLogin = 'http://103.263.168.73:3000/login';
+    urlLogin = 'http://103.253.168.73:3000/login';
     urltask='http://103.253.168.73:3000/task/list';
     urlsalesreport='http://103.253.168.73:3000/sales/reports';
     urlcafstatus='http://103.253.168.73:3000/caf/status';
+    
 constructor(private objHTTP: HttpClient, private objrouter: Router) { }
   login(frmLoginObj) {
     return this.objHTTP.post(this.urlLogin, frmLoginObj).pipe(map(res => res));
@@ -26,8 +27,8 @@ constructor(private objHTTP: HttpClient, private objrouter: Router) { }
   }
     
    canActivate() {
-    console.log(localStorage.getItem('U_Id' ));
-    if (localStorage.getItem('U_Id' ) !== null) {
+    console.log(localStorage.getItem('Id' ));
+    if (localStorage.getItem('Id' ) !== null) {
       this.objrouter.navigate(['']);
       return false;
     }

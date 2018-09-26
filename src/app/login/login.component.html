@@ -6,21 +6,26 @@
 <br><form [formGroup]='frm'>
     <input  formControlName="un" class="form-control" placeholder="Username">
     <div *ngIf="username.invalid && (username.dirty || username.touched )"> 
-      <div *ngIf="username.hasError('required')">Enter username </div>
+      <div *ngIf="username.hasError('required')"  style="color:red">Enter username </div>
       </div>
-   <input  formControlName="ps" class="form-control" placeholder="Password">
+   <input  type="password" formControlName="pwd" class="form-control" placeholder="Password">
     <div *ngIf="password.invalid && (password.dirty || password.touched )"> 
-      <div *ngIf="password.hasError('required')">Enter Password </div>
+      <div *ngIf="password.hasError('required')" style="color:red">Enter Password </div>
     </div>
     <div id="remember" class="checkbox">
         <label>
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"  >Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="onSubmit()" >Sign in</button>
  </form>
   <a href="#" class="forgot-password">
       Forgot the password?
   </a>
+  <div class="text-danger pull-left">{{Status}}</div>
+
 </div><!-- /card-container -->
 </div>
+<footer style="text-align: center">
+    @seans Media Pvt ltd
+</footer>
