@@ -31,7 +31,7 @@ constructor(private objHTTP: HttpClient, private objrouter: Router) { }
     
    canActivate() {
     console.log(localStorage.getItem('Id' ));
-    if (localStorage.getItem('Id' ) !== null) {
+    if (localStorage.getItem('Id' ) == null) {
       this.objrouter.navigate(['']);
       return false;
     }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,Validators} from '@angular/forms';
+import { FormGroup,FormControl,Validators, FormBuilder} from '@angular/forms';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
 @Component({
@@ -11,16 +11,11 @@ export class LoginComponent  {
   Status: string;
   lData: any = {};
 frm:FormGroup;
-username;
-password;
-  constructor(private objService:ServiceService,private objrouter:Router) { 
-    this.frm=new FormGroup({
-     un: new FormControl('',[Validators.required]),
-     pwd: new FormControl('',[Validators.required])
+  constructor(private objService:ServiceService,private objrouter:Router, private obj:FormBuilder) { 
+    this.frm=this.obj.group({
+     un: ['',[Validators.required]],
+     pwd: ['',[Validators.required]]
     });
-
-    this.username=this.frm.controls["un"];
-    this.password=this.frm.controls["pwd"];
   }
   onSubmit() {
 this.objService.login(this.frm.value).subscribe(data => {
