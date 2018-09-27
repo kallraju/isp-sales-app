@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-sales-report',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesReportComponent implements OnInit {
 
-  constructor() { }
+  constructor(private objHttp:ServiceService) { }
 
   ngOnInit() {
+    this.objHttp.salesreport().subscribe(data=>{
+      alert(JSON.stringify(data));
+    })
   }
 
 }

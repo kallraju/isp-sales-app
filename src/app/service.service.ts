@@ -19,8 +19,8 @@ constructor(private objHTTP: HttpClient, private objrouter: Router) { }
   task() {
     return this.objHTTP.get(this.urltask).pipe(map(res => res));
   }
-  salesreport(frmsalesreportObj) {
-    return this.objHTTP.post(this.urlsalesreport, frmsalesreportObj).pipe(map(res => res));
+  salesreport() {
+    return this.objHTTP.get(this.urlsalesreport).pipe(map(res => res));
   }
   //cafstatus(){
   //  return this.objHTTP.get(this.urlcafstatus).pipe(map(res => res));
