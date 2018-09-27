@@ -11,6 +11,7 @@ import { SalesReportComponent } from './sales-report/sales-report.component';
 import { TaskComponent } from './task/task.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpTokenInterceptService } from './http-token-intercept.service';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpTokenInterceptService } from './http-token-intercept.service';
     NEWCAFComponent,
     CAFStatusComponent,
     SalesReportComponent,
-    TaskComponent
+    TaskComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
