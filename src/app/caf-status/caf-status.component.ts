@@ -8,17 +8,13 @@ import { ServiceService } from '../service.service';
 })
 export class CAFStatusComponent implements OnInit {
   CAFStatus: any;
-
+  
   constructor(private objHttp: ServiceService) { }
-  submit(ravi){
-    this.objHttp.cafstatus().subscribe(data =>{
-     // this.CAFStatus = data;
-      //this.CAFStatus=this.CAFStatus.data;
-      alert(JSON.stringify(data));
-    })
-  }
+
 
   ngOnInit() {
-    
+    this.objHttp.cafstatus().subscribe(data =>{
+      this.CAFStatus = data;
+    })
   }
 }

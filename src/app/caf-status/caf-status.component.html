@@ -7,29 +7,24 @@
             <tr>
               <th> CAF No</th>
               <th>Date </th>
-              <th>Coustemer Status</th>
+              <th>Coustemer</th>
+              <th> Status</th>
               <th>InstDate</th>
               <th>Remarks</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-               <td>2</td>
-               <td>2</td>
-               <td>1</td>
-               <td>2</td>
-               <td>5</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>5</td>
-</tr>
-
- </tbody>
+            <tr *ngFor="let a of CAFStatus">
+              <td>{{a.id}}</td>
+              <td>{{a.DOB | date : 'dd/MM/yyyy'}}</td>
+              <td>{{a.applicant_name}}</td>
+              <td>{{a.status1}}</td>
+              <td>{{a.inserted_timestamp}}</td>
+              <td>{{a.remarks}}</td>
+            </tr>
+          </tbody>
  </table>    
  </div>
  <br>
+
  <footer style="text-align: center">@Seans Media Pvt Ltd</footer>
