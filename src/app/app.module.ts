@@ -12,7 +12,7 @@ import { TaskComponent } from './task/task.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpTokenInterceptService } from './http-token-intercept.service';
 import { LogoutComponent } from './logout/logout.component';
-
+import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { LogoutComponent } from './logout/logout.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BsDatepickerModule
     ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
