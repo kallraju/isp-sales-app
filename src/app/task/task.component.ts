@@ -7,12 +7,13 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
-
+display:any;
   constructor(private objHttp:ServiceService) { }
 
   ngOnInit() {
     this.objHttp.task().subscribe(data=>{
-      alert(JSON.stringify(data));
+      this.display=data;
+     
     })
   }
 

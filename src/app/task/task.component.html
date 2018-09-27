@@ -12,13 +12,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="">
-            <td>{{a.id}}</td>
-            <td>{{a.DOB | date : 'dd/MM/yyyy'}}</td>
-            <td>{{a.applicant_name}}</td>
-            <td>{{a.status1}}</td>
-            <td>{{a.inserted_timestamp}}</td>
+          <tr *ngFor="let a of display">
+            <td>{{a.date1}}</td>
+            <td>{{a.assigned_by}}</td>
+            <td>{{a.complete_by_date}}</td>
             <td>{{a.remarks}}</td>
+            
           </tr>
         </tbody>
 </table>    
