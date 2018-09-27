@@ -1,3 +1,28 @@
-<p>
-  task works!
-</p>
+<div class="container">
+  <div class="table-responsive-sm">          
+      <h1 style="text-align: center;color: blueviolet"><u>CAF Status</u></h1>
+       <br>  
+      <table class="table">
+        <thead>
+          <tr>
+            <th> Date</th>
+            <th>Assigned By Task </th>
+            <th>Complete Update</th>
+            <th> Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="">
+            <td>{{a.id}}</td>
+            <td>{{a.DOB | date : 'dd/MM/yyyy'}}</td>
+            <td>{{a.applicant_name}}</td>
+            <td>{{a.status1}}</td>
+            <td>{{a.inserted_timestamp}}</td>
+            <td>{{a.remarks}}</td>
+          </tr>
+        </tbody>
+</table>    
+</div>
+<br>
+
+<footer style="text-align: center">@Seans Media Pvt Ltd</footer>
