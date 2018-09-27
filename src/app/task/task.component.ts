@@ -8,7 +8,7 @@ import { ServiceService } from '../service.service';
 })
 export class TaskComponent implements OnInit {
 
-  constructor(private objHttp:ServiceService) {}
+  constructor(private objHttp:ServiceService) { }
 
   ngOnInit() {
     this.objHttp.task().subscribe(data=>{
