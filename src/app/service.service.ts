@@ -12,6 +12,7 @@ export class ServiceService implements CanActivate {
     urltask='http://103.253.168.73:3000/task/list';
     urlsalesreport='http://103.253.168.73:3000/sales/reports';
     urlcafstatus='http://103.253.168.73:3000/caf/status';
+    urlcafadd='http://103.253.168.73:3000/caf/add';
 constructor(private objHTTP: HttpClient, private objrouter: Router) { }
   login(frmLoginObj) {
     return this.objHTTP.post(this.urlLogin, frmLoginObj).pipe(map(res => res));
@@ -28,7 +29,10 @@ constructor(private objHTTP: HttpClient, private objrouter: Router) { }
   cafstatus(){
     return this.objHTTP.get(this.urlcafstatus).pipe(map(res => res));
   }
-    
+  cafadd(frmcafaddObj) {
+    return this.objHTTP.post(this.urlcafadd, frmcafaddObj).pipe(map(res => res));
+  }
+  
    canActivate() {
     console.log(localStorage.getItem('Id' ));
     if (localStorage.getItem('Id' ) == null) {

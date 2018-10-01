@@ -2,6 +2,7 @@
 <div class="container">
   <div class="table-responsive-sm">          
     <h1 style="text-align: center;color: blueviolet"><u>NEW CAF</u></h1>
+    <form [formGroup]= "frm">
     <table class="table">
         <thead>
           <tr>
@@ -13,35 +14,35 @@
         <tbody>
           <tr>
           
-            <td><input  formControlName="un" class="form-control" BsDatepicker placeholder="Applicant Name"></td>
-            <td><input type="date"formControlName="un" class="form-control"  placeholder="DOB : DD/MM/YYYY"></td>
-            <td><input  formControlName="un" class="form-control" placeholder="Father/Mothers Name"></td>
+            <td><input  formControlName="applicant_name" class="form-control" BsDatepicker placeholder="Applicant Name" required></td>
+            <td><input type="date"formControlName="dob" class="form-control"  placeholder="DOB : DD/MM/YYYY"></td>
+            <td><input  formControlName="fathers_or_mothers_name" class="form-control" placeholder="Father/Mothers Name"></td>
           </tr>
           <tr>
-            <td><input  formControlName="un" class="form-control" placeholder="Installation Address"></td>
+            <td><input  formControlName="installation_address" class="form-control" placeholder="Installation Address"></td>
           
-            <td colspan="2"><input  formControlName="un" class="form-control" placeholder="Google location"></td>
+            <td colspan="2"><input  formControlName="google_location" class="form-control" placeholder="Google location">Hyderabad</td>
           </tr>
           <tr>
-            <td><input  formControlName="un" class="form-control" placeholder="CITY"></td>
-            <td><input  formControlName="un" class="form-control" placeholder="State"></td>
-            <td><input  formControlName="un" class="form-control" placeholder="PIN Code"></td>
+            <td><input  formControlName="city" class="form-control" placeholder="CITY"></td>
+            <td><input  formControlName="state" class="form-control" placeholder="State"></td>
+            <td><input formControlName="pincode" class="form-control" placeholder="PIN Code"></td>
           </tr>
           <tr>
-            <td><input  formControlName="un" class="form-control" placeholder="Contact No Resi"></td>
-            <td><input  formControlName="un" class="form-control" placeholder="Contact No.Office"></td>
-            <td><input  formControlName="un" class="form-control" placeholder="Mobile"></td>
+            <td><input  formControlName="contact_no_resi" class="form-control" placeholder="Contact No Resi"></td>
+            <td><input  formControlName="contact_no_office" class="form-control" placeholder="Contact No.Office"></td>
+            <td><input type="number" formControlName="mobile" class="form-control" placeholder="Mobile"></td>
           </tr>
           <tr>
-            <td><input  formControlName="un" class="form-control" placeholder="Email Id"></td>
-            <td><input  formControlName="un" class="form-control" placeholder="PAN/GST"></td>
+            <td><input  formControlName="email_id" class="form-control" placeholder="Email Id"></td>
+            <td><input  formControlName="pan_gst" class="form-control" placeholder="PAN/GST"></td>
           </tr>
           <tr>
-            <td colspan="2"><input  formControlName="un" class="form-control" placeholder="Permanet Address"></td>
+            <td colspan="2"><input  formControlName="permanent_address" class="form-control" placeholder="Permanet Address"></td>
               </tr>
             <tr><td>  <div class="form-group">
-                  <label for="sel3">Plan Details</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <label for="sel3" >Plan Details</label>
+                  <select class="form-control input-sm" id="sel3" formControlName="plan_details" placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -49,8 +50,8 @@
                 </div>
               </td></tr>
               <tr><td>  <div class="form-group">
-                  <label for="sel3">Plan Duration</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <label for="sel3"  >Plan Duration</label>
+                  <select class="form-control input-sm" id="sel3" formControlName="plan_duration" placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -58,8 +59,8 @@
                 </div>
               </td></tr>
               <tr><td>  <div class="form-group">
-                  <label for="sel3">Payment</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <label for="sel3" >Payment</label>
+                  <select class="form-control input-sm" id="sel3"  formControlName="payment_mode" placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -67,8 +68,8 @@
                 </div>
               </td></tr>
               <tr><td>  <div class="form-group">
-                  <label for="sel3">Amount</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <label for="sel3"  >Amount</label>
+                  <select class="form-control input-sm" id="sel3" formControlName="lamount" placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -78,33 +79,34 @@
           
           <tr>
               <div class="form-group;form-control">
-                  <input type="file"  name="file">
+                  <input type="file" formControlName="photo_graph" (change)="onFileSelected_Photo_Graph($event)">
                 </div>
                 </tr>
                 <tr>
                     <div class="form-group;form-control">
-                        <input type="file"  name="file">
+                        <input type="file" formControlName="id_proof"  (change)="onFileSelected_Id_Proof($event)">
                       </div>
                       </tr>
                       <tr>
                           <div class="form-group;form-control">
-                              <input type="file"  name="file">
+                              <input type="file" formControlName="addr_proof"  (change)="onFileSelected_Addr_Proof($event)">
                             </div>
                             </tr>
                             &nbsp;
                           <h6>Coustemer Declaration</h6>
        <pre>        I have read & understood the terms and conditions and agree to abide by them.</pre>
        <tr>
-         <td> <input  formControlName="un"  placeholder="Enter OTP ">
-          &nbsp;<button type="button" class="btn btn-primary">Send OTP</button>
+         <td> <input  formControlName="otp"  placeholder="Enter OTP ">
+          &nbsp;<button type="button" class="btn btn-primary" (click) = "onsend()" >Send OTP</button>
          </td>
         <td></td>
         <td></td>
       </tr>
      </tbody>
       </table>
+    </form>
       <div style="text-align: center">
-          <button type="submit" class="btn btn-primary" >submit</button>
+          <button type="submit" class="btn btn-primary"  >submit</button>
        &nbsp;&nbsp; <button type="reset" class="btn btn-primary" >Reset</button>
        </div>
 </div><br>
