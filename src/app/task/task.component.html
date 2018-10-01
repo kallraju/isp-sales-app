@@ -13,7 +13,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let a of display">
-            <td>{{a.date1}}</td>
+            <td>{{a.date1 | date:'dd/mm/yy'}}</td>
             <td>{{a.assigned_by}}</td>
             <td>{{a.complete_by_date}}</td>
             <td>{{a.remarks}}</td>

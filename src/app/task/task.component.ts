@@ -13,8 +13,9 @@ display:any;
   ngOnInit() {
     this.objHttp.task().subscribe(data=>{
       this.display=data;
-     
-    })
+      },err=>{
+        console.log("status.nnmm");
+      })
   }
 
 }
