@@ -1,3 +1,4 @@
+<div class="loader" *ngIf="loader"></div>
     <div class="container" style="margin-top: 60px">
     <h2 class="text-center">Login</h2>
 	<div class="row justify-content-center">
@@ -25,7 +26,7 @@
                                   <div *ngIf="frm.controls['pwd'].hasError('required')" style="color:red">Enter Password </div>
                                 </div><br>
                                  <div class="text-center">
-                                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="onSubmit()" >Sign in</button>
+                                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="onSubmit()"  [disabled]="frm.invalid" >Sign in</button>
                                     </div>
                             </div>
                              <p style="color:red;text-align: center">{{Status}}</p>

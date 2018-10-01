@@ -12,6 +12,7 @@ export class LoginComponent  {
   Status: string;
   lData: any = {};
   frm:FormGroup;
+  loader = false;
 
   constructor(private objService:ServiceService,private objrouter:Router, private obj:FormBuilder) { 
     this.frm=this.obj.group({
@@ -20,6 +21,7 @@ export class LoginComponent  {
     });
   }
   onSubmit() {
+    this.loader = true;
     this.frm.value.pwd = sha512.sha512(this.frm.value.pwd);
 this.objService.login(this.frm.value).subscribe(data => {
     this.lData = data;
@@ -30,9 +32,11 @@ this.objService.login(this.frm.value).subscribe(data => {
             localStorage.removeItem('Id');
             this.Status = 'Please provide valid username and password';
            }
+           this.loader = false;
          },
          err =>  {
            this.Status = 'Something went wrong please try again';
+           this.loader = false;
          });
        }
 }
