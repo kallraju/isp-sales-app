@@ -16,19 +16,19 @@
             <td><input  formControlName="aplicant_name" class="form-control" BsDatepicker placeholder="Applicant Name">
             <div style="color: brown" *ngIf="frm.controls['aplicant_name'].invalid &&
                    (frm.controls['aplicant_name'].touched || frm.controls['aplicant_name'].dirty)">
-               enter first name
+                   Enter aplicant_name
             </div>
             </td>
             <td><input type="date" formControlName="dob" class="form-control"  placeholder="DOB : DD/MM/YYYY">
               <div style="color: brown" *ngIf="frm.controls['dob'].invalid &&
               (frm.controls['dob'].touched || frm.controls['dob'].dirty)">
-                  enter first name
+              Enter DOB
               </div>
             </td>
             <td><input  formControlName="father_or_mothers_name" class="form-control" placeholder="Father/Mothers Name">
               <div style="color: brown" *ngIf="frm.controls['father_or_mothers_name'].invalid &&
               (frm.controls['father_or_mothers_name'].touched || frm.controls['father_or_mothers_name'].dirty)">
-                 enter first name
+              Enter father_or_mothers_name
             </div>
             </td>
           </tr>
@@ -36,82 +36,82 @@
             <td><input  formControlName="installation_address" class="form-control" placeholder="Installation Address">
               <div style="color: brown" *ngIf="frm.controls['installation_address'].invalid &&
               (frm.controls['installation_address'].touched || frm.controls['installation_address'].dirty)">
-               enter first name
+              Enter installation_address
             </div>
             </td>
           
             <td colspan="2"><input  formControlName="google_location" class="form-control" placeholder="Google location">
               <div style="color: brown" *ngIf="frm.controls['google_location'].invalid &&
               (frm.controls['google_location'].touched || frm.controls['google_location'].dirty)">
-                enter first name
-             </div>
+              Enter google_location
+            </div>
             </td>
           </tr>
           <tr>
             <td><input  formControlName="city" class="form-control" placeholder="CITY">
               <div style="color: brown" *ngIf="frm.controls['city'].invalid &&
               (frm.controls['city'].touched || frm.controls['city'].dirty)">
-                  enter first name
-              </div>
+              Enter city
+            </div>
             </td>
             <td><input  formControlName="state" class="form-control" placeholder="State">
               <div style="color: brown" *ngIf="frm.controls['state'].invalid &&
               (frm.controls['state'].touched || frm.controls['state'].dirty)">
-                  enter first name
-              </div>
+              Enter state
+            </div>
             </td>
             <td><input  formControlName="pincode" class="form-control" placeholder="PIN Code">
               <div style="color: brown" *ngIf="frm.controls['pincode'].invalid &&
               (frm.controls['pincode'].touched || frm.controls['pincode'].dirty)">
-                  enter first name
-              </div>
+              Enter pincode
+            </div>
             </td>
           </tr>
           <tr>
             <td><input  formControlName="contact_no_resi" class="form-control" placeholder="Contact No Resi">
               <div style="color: brown" *ngIf="frm.controls['contact_no_resi'].invalid &&
               (frm.controls['contact_no_resi'].touched || frm.controls['contact_no_resi'].dirty)">
-                  enter first name
-              </div>
+              Enter contact_no_resi
+            </div>
             </td>
             <td><input  formControlName="contact_no_office" class="form-control" placeholder="Contact No.Office">
               <div style="color: brown" *ngIf="frm.controls['contact_no_office'].invalid &&
               (frm.controls['contact_no_office'].touched || frm.controls['contact_no_office'].dirty)">
-                  enter first name
-              </div>
+              Enter contact_no_office
+            </div>
             </td>
             <td><input  formControlName="mobile" class="form-control" placeholder="Mobile">
               <div style="color: brown" *ngIf="frm.controls['mobile'].invalid &&
               (frm.controls['mobile'].touched || frm.controls['mobile'].dirty)">
-                  enter first name
-              </div>
+              Enter mobile
+            </div>
             </td>
           </tr>
           <tr>
             <td><input  formControlName="email_id" class="form-control" placeholder="Email Id">
               <div style="color: brown" *ngIf="frm.controls['aplicant_name'].invalid &&
               (frm.controls['email_id'].touched || frm.controls['email_id'].dirty)">
-                  enter first name
-              </div>
+              Enter email_id
+            </div>
             </td>
             <td><input  formControlName="pan_gst" class="form-control" placeholder="PAN/GST">
               <div style="color: brown" *ngIf="frm.controls['pan_gst'].invalid &&
               (frm.controls['pan_gst'].touched || frm.controls['pan_gst'].dirty)">
-                  enter first name
-              </div>
+              Enter pan_gst
+            </div>
             </td>
           </tr>
           <tr>
             <td colspan="2"><input  formControlName="permanent_address" class="form-control" placeholder="Permanet Address">
               <div style="color: brown" *ngIf="frm.controls['permanent_address'].invalid &&
               (frm.controls['permanent_address'].touched || frm.controls['permanent_address'].dirty)">
-                  enter first name
-              </div>
+              Enter permanent_address
+            </div>
             </td>
               </tr>
             <tr><td>  <div class="form-group">
                   <label for="sel3">Plan Details</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <select class="form-control input-sm" id="sel3" formControlName="plan_details" placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -120,7 +120,7 @@
               </td></tr>
               <tr><td>  <div class="form-group">
                   <label for="sel3">Plan Duration</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <select class="form-control input-sm" id="sel3"formControlName="plan_duration" placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -129,7 +129,7 @@
               </td></tr>
               <tr><td>  <div class="form-group">
                   <label for="sel3">Payment</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <select class="form-control input-sm" id="sel3" formControlName="payment_mode"placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -138,7 +138,7 @@
               </td></tr>
               <tr><td>  <div class="form-group">
                   <label for="sel3">Amount</label>
-                  <select class="form-control input-sm" id="sel3" placeholder="plan">
+                  <select class="form-control input-sm" id="sel3"formControlName="lamount" placeholder="plan">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -148,33 +148,33 @@
           
           <tr>
               <div class="form-group;form-control">
-                  <input type="file" formControlName="photo_graph" name="file">
+                  <input type="file" formControlName="photo_graph" name="file" (change)="onFileSelected_Photo_Graph($event)">
                 </div>
                 </tr>
                 <tr>
                     <div class="form-group;form-control">
-                        <input type="file" formControlName="id_proof" name="file">
+                        <input type="file" formControlName="id_proof" name="file" (change)="onFileSelected_Id_Proof($event)">
                       </div>
                       </tr>
                       <tr>
                           <div class="form-group;form-control">
-                              <input type="file" formControlName="addr_proof" name="file">
+                              <input type="file" formControlName="addr_proof" name="file" (change)="onFileSelected_Addr_Proof($event)">
                             </div>
                             </tr>
                             &nbsp;
                           <h6>Coustemer Declaration</h6>
        <pre>        I have read & understood the terms and conditions and agree to abide by them.</pre>
        <tr>
-         <td> <input   placeholder="Enter OTP ">
-          &nbsp;<button type="button"  class="btn btn-primary">Send OTP</button>
+        <td> <input  formControlName="otp"  placeholder="Enter OTP ">
+          &nbsp;<button type="button" class="btn btn-primary" (click) = "onsend()" >Send OTP</button>
          </td>
-        <td></td>
+       <td></td>
         <td></td>
       </tr>
      </tbody>
       </table>
       <div style="text-align: center">
-          <button type="submit" class="btn btn-primary" (click)="onsend()">submit</button>
+      <button type="submit" class="btn btn-primary">submit</button>
        &nbsp;&nbsp; <button type="reset" class="btn btn-primary" >Reset</button>
        </div>
 </div><br>

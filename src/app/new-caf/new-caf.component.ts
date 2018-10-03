@@ -14,25 +14,26 @@ export class NEWCAFComponent implements OnInit {
   lData: any = {};
   ravi: any= {};
   frm:FormGroup;
+  name:string;
   selectedFile_Photo_Graph: File;
   selectedFile_Id_Proof: File;
   selectedFile_Addr_Proof: File;
   constructor(private objService:ServiceService,private objrouter:Router, private obj:FormBuilder) {
     this.frm=this.obj.group({
-      aplicant_name:['',Validators.required],
-      dob:['', Validators.required],
-      city:['',Validators.required],
-      contact_no_resi:['', Validators.required],
-      email_id:['',Validators.required],
-      permanent_address:['',Validators.required],
-      father_or_mothers_name:['',Validators.required],
-      installation_address:['',Validators.required],
-      google_location:['',Validators.required],
-      state:['',Validators.required],
-      pincode:['',Validators.required],
-      contact_no_office:['',Validators.required],
-      mobile:['',Validators.required],
-      pan_gst:['',Validators.required],
+      aplicant_name:['',[Validators.required]],
+      dob:['', [Validators.required]],
+      city:['',[Validators.required]],
+      contact_no_resi:['', [Validators.required]],
+      email_id:['',[Validators.required]],
+      permanent_address:['',[Validators.required]],
+      father_or_mothers_name:['',[Validators.required]],
+      installation_address:['',[Validators.required]],
+      google_location:['',[Validators.required]],
+      state:['',[Validators.required]],
+      pincode:['',[Validators.required]],
+      contact_no_office:['',[Validators.required]],
+      mobile:['',[Validators.required]],
+      pan_gst:['',[Validators.required]],
       addr_proof:['',[]],
       photo_graph:['',[]],
       id_proof:['',[]],
@@ -45,8 +46,10 @@ export class NEWCAFComponent implements OnInit {
 
      });
    }
+   
    onFileSelected_Photo_Graph(event){
     this.selectedFile_Photo_Graph=<File>event.target.files[0];
+    alert(this.selectedFile_Photo_Graph.name);
    }
    onFileSelected_Id_Proof(event){
     this.selectedFile_Id_Proof=<File>event.target.files[0];
@@ -78,13 +81,17 @@ export class NEWCAFComponent implements OnInit {
      fd.append('plan_duration',this.frm.value.plan_duration);
      fd.append('lamount',this.frm.value.lamount);
      fd.append('payment_mode',this.frm.value.payment_mode);
-      this.objService.cafadd(fd).subscribe(data => {
+     
+     this.objService.cafadd(fd).subscribe(data => {
         this.lData = data;
-        alert(JSON.stringify(JSON.stringify(this.lData)));
-      });
+        alert(JSON.stringify(this.lData));
+      },
+      err=>{
+        alert("something is wrong");
+      }
+      );
      //this.objService.cafadd(this.frm.value).subscribe(data => this.lData = data);
    }
-   
   ngOnInit() {
   }
 
