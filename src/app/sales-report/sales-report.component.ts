@@ -8,11 +8,12 @@ import { ServiceService } from '../service.service';
 })
 export class SalesReportComponent implements OnInit {
 
+  displayData:any;
   constructor(private objHttp:ServiceService) { }
 
   ngOnInit() {
     this.objHttp.salesreport().subscribe(data=>{
-      alert(JSON.stringify(data));
+      this.displayData= data;
     })
   }
 

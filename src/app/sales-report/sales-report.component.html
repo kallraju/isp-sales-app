@@ -10,30 +10,30 @@
             <th>Location</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let a of displayData">
           <tr>
             <td>Target</td>
-            <td></td>
+            <td>{{a.target}}</td>
             <td></td>
              </tr>
              <tr>
               <td>Sales Achieved</td>
-              <td></td>
+              <td>{{a.sales_achieved}}</td>
               <td></td>
                </tr>
                <tr>
                 <td>Connected</td>
-                <td></td>
+                <td>{{a.connected}}</td>
                 <td></td>
                  </tr>
                  <tr>
                   <td>% Achieved</td>
-                  <td></td>
+                  <td>{{a.percentage}}</td>
                   <td></td>
                    </tr>
                    <tr>
                     <td>Earnings</td>
-                    <td></td>
+                    <td>{{a.earnings}}</td>
                     <td></td>
                      </tr>
                  </tbody>

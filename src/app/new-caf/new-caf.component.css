@@ -1,0 +1,20 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  #demo:required:invalid, #demo:focus:invalid{
+      background-image: url(/assets/abcd.png);
+      background-position: right center;
+      background-size: 1em;
+      background-repeat: no-repeat;
+  }
+  #demo:required:valid, #demo:focus:valid{
+      background-image: url(C:\vsts\isp-sales-app\src\assets\123.png);
+      background-position: right center;
+      background-size: 1em;
+      background-repeat: no-repeat;
+  }

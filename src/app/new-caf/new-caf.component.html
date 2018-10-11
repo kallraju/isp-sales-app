@@ -1,115 +1,172 @@
 
 <div class="container">
-  <div class="table-responsive-sm">          
-    <h1 style="text-align: center; color: blueviolet"><u>NEW CAF</u></h1>
-    <table class="table" [formGroup]="frm">
-        <thead>
-          <tr>
-            <th> CAF No</th>
-            <th>Date </th>
-            <th>Place</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-          
-            <td><input  formControlName="aplicant_name" class="form-control" BsDatepicker placeholder="Applicant Name">
-            <div style="color: brown" *ngIf="frm.controls['aplicant_name'].invalid &&
-                   (frm.controls['aplicant_name'].touched || frm.controls['aplicant_name'].dirty)">
-                   Enter aplicant_name
-            </div>
+    <div class="table-responsive-sm">          
+      <h1 style="text-align: center; color: blueviolet"><u>NEW CAF</u></h1>
+      <table class="table" [formGroup]="frm">
+          <thead>
+            <tr>
+              <th> CAF No</th>
+              <th>Date </th>
+              <th>Place</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <td>
+           
+            <mat-form-field appearance="outline" class="example-container">
+          <mat-label>first name</mat-label>
+            <input matInput placeholder="Placeholder" BsDatepicker formControlName="aplicant_name" id="demo" required >
+          <div *ngIf="frm.controls['aplicant_name'].invalid && 
+            (frm.controls['aplicant_name'].touched || frm.controls['aplicant_name'].dirty)">
+              Enter your aplicant_name
+          </div>
+          </mat-form-field>
             </td>
-            <td><input type="date" formControlName="dob" class="form-control"  placeholder="DOB : DD/MM/YYYY">
-              <div style="color: brown" *ngIf="frm.controls['dob'].invalid &&
-              (frm.controls['dob'].touched || frm.controls['dob'].dirty)">
-              Enter DOB
-              </div>
-            </td>
-            <td><input  formControlName="father_or_mothers_name" class="form-control" placeholder="Father/Mothers Name">
-              <div style="color: brown" *ngIf="frm.controls['father_or_mothers_name'].invalid &&
-              (frm.controls['father_or_mothers_name'].touched || frm.controls['father_or_mothers_name'].dirty)">
-              Enter father_or_mothers_name
-            </div>
-            </td>
-          </tr>
-          <tr>
-            <td><input  formControlName="installation_address" class="form-control" placeholder="Installation Address">
-              <div style="color: brown" *ngIf="frm.controls['installation_address'].invalid &&
-              (frm.controls['installation_address'].touched || frm.controls['installation_address'].dirty)">
-              Enter installation_address
-            </div>
-            </td>
-          
-            <td colspan="2"><input  formControlName="google_location" class="form-control" placeholder="Google location">
-              <div style="color: brown" *ngIf="frm.controls['google_location'].invalid &&
-              (frm.controls['google_location'].touched || frm.controls['google_location'].dirty)">
-              Enter google_location
-            </div>
-            </td>
-          </tr>
-          <tr>
-            <td><input  formControlName="city" class="form-control" placeholder="CITY">
-              <div style="color: brown" *ngIf="frm.controls['city'].invalid &&
-              (frm.controls['city'].touched || frm.controls['city'].dirty)">
-              Enter city
-            </div>
-            </td>
-            <td><input  formControlName="state" class="form-control" placeholder="State">
-              <div style="color: brown" *ngIf="frm.controls['state'].invalid &&
-              (frm.controls['state'].touched || frm.controls['state'].dirty)">
-              Enter state
-            </div>
-            </td>
-            <td><input  formControlName="pincode" class="form-control" placeholder="PIN Code">
-              <div style="color: brown" *ngIf="frm.controls['pincode'].invalid &&
-              (frm.controls['pincode'].touched || frm.controls['pincode'].dirty)">
-              Enter pincode
-            </div>
-            </td>
-          </tr>
-          <tr>
-            <td><input  formControlName="contact_no_resi" class="form-control" placeholder="Contact No Resi">
-              <div style="color: brown" *ngIf="frm.controls['contact_no_resi'].invalid &&
-              (frm.controls['contact_no_resi'].touched || frm.controls['contact_no_resi'].dirty)">
-              Enter contact_no_resi
-            </div>
-            </td>
-            <td><input  formControlName="contact_no_office" class="form-control" placeholder="Contact No.Office">
-              <div style="color: brown" *ngIf="frm.controls['contact_no_office'].invalid &&
-              (frm.controls['contact_no_office'].touched || frm.controls['contact_no_office'].dirty)">
-              Enter contact_no_office
-            </div>
-            </td>
-            <td><input  formControlName="mobile" class="form-control" placeholder="Mobile">
-              <div style="color: brown" *ngIf="frm.controls['mobile'].invalid &&
-              (frm.controls['mobile'].touched || frm.controls['mobile'].dirty)">
-              Enter mobile
-            </div>
-            </td>
-          </tr>
-          <tr>
-            <td><input  formControlName="email_id" class="form-control" placeholder="Email Id">
-              <div style="color: brown" *ngIf="frm.controls['aplicant_name'].invalid &&
-              (frm.controls['email_id'].touched || frm.controls['email_id'].dirty)">
-              Enter email_id
-            </div>
-            </td>
-            <td><input  formControlName="pan_gst" class="form-control" placeholder="PAN/GST">
-              <div style="color: brown" *ngIf="frm.controls['pan_gst'].invalid &&
-              (frm.controls['pan_gst'].touched || frm.controls['pan_gst'].dirty)">
-              Enter pan_gst
-            </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2"><input  formControlName="permanent_address" class="form-control" placeholder="Permanet Address">
-              <div style="color: brown" *ngIf="frm.controls['permanent_address'].invalid &&
-              (frm.controls['permanent_address'].touched || frm.controls['permanent_address'].dirty)">
-              Enter permanent_address
-            </div>
-            </td>
-              </tr>
-            <tr><td>  <div class="form-group">
+  
+              <td>
+                  <mat-form-field appearance="outline" class="example-container">
+                      <mat-label>Date of Birth</mat-label>
+                        <input type="date" matInput placeholder="DOB : DD/MM/YYYY" formControlName="dob"  id="demo"  required >
+                      <div *ngIf="frm.controls['dob'].invalid && 
+                        (frm.controls['dob'].touched || frm.controls['dob'].dirty)">
+                          Enter your dob
+                      </div>
+                  </mat-form-field>
+              </td>
+              <td>
+                  <mat-form-field appearance="outline" class="example-container">
+                      <mat-label>Father/Mothers Name</mat-label>
+                        <input matInput placeholder="Father/Mothers Name" formControlName="father_or_mothers_name"   id="demo"  required>
+                      <div *ngIf="frm.controls['father_or_mothers_name'].invalid && 
+                        (frm.controls['father_or_mothers_name'].touched || frm.controls['father_or_mothers_name'].dirty)">
+                        Father/Mothers Name
+                      </div>
+                      </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <mat-form-field appearance="outline" class="example-container">
+                      <mat-label>'installation_address'</mat-label>
+                        <input matInput placeholder="Installation Address" formControlName="installation_address"  id="demo"  required>
+                      <div *ngIf="frm.controls['installation_address'].invalid && 
+                        (frm.controls['installation_address'].touched || frm.controls['installation_address'].dirty)">
+                          Enter your 'installation_address'
+                      </div>
+                 </mat-form-field>
+              </td>
+            
+              <td colspan="2">
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>google_location</mat-label>
+                  <input id="demo" required formControlName="google_location" matInput placeholder="Google location">
+                  <div style="color: brown" *ngIf="frm.controls['google_location'].invalid &&
+                  (frm.controls['google_location'].touched || frm.controls['google_location'].dirty)">
+                  google_location
+                </div>
+              </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>city</mat-label>
+                  <input id="demo" required formControlName="city" matInput placeholder="CITY">
+                  <div style="color: brown" *ngIf="frm.controls['city'].invalid &&
+                  (frm.controls['city'].touched || frm.controls['city'].dirty)">
+                      enter your city
+                  </div>
+              </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>state</mat-label>
+                  <input id="demo" required formControlName="state" matInput placeholder="State">
+                  <div style="color: brown" *ngIf="frm.controls['state'].invalid &&
+                  (frm.controls['state'].touched || frm.controls['state'].dirty)">
+                      enter your state
+                  </div>
+              </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>pincode</mat-label>
+                  <input id="demo" required formControlName="pincode" matInput placeholder="PIN Code">
+                  <div style="color: brown" *ngIf="frm.controls['pincode'].invalid &&
+                  (frm.controls['pincode'].touched || frm.controls['pincode'].dirty)">
+                      pincode
+                  </div>
+               </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>contact_no_resi</mat-label>
+                  <input id="demo" required formControlName="contact_no_resi" matInput placeholder="Contact No Resi">
+                  <div style="color: brown" *ngIf="frm.controls['contact_no_resi'].invalid &&
+                  (frm.controls['contact_no_resi'].touched || frm.controls['contact_no_resi'].dirty)">
+                       contact_no_resi
+                  </div>
+              </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>contact_no_office</mat-label>
+                  <input id="demo" required formControlName="contact_no_office" matInput placeholder="Contact No.Office">
+                  <div style="color: brown" *ngIf="frm.controls['contact_no_office'].invalid &&
+                  (frm.controls['contact_no_office'].touched || frm.controls['contact_no_office'].dirty)">
+                      contact_no_office
+                  </div>
+              </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>mobile</mat-label>
+                  <input id="demo" required formControlName="mobile" matInput placeholder="Mobile">
+                  <div style="color: brown" *ngIf="frm.controls['mobile'].invalid &&
+                  (frm.controls['mobile'].touched || frm.controls['mobile'].dirty)">
+                      mobile
+                  </div>
+              </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>email_id</mat-label>
+                  <input id="demo" required formControlName="email_id" matInput placeholder="Email Id">
+                  <div style="color: brown" *ngIf="frm.controls['email_id'].invalid &&
+                  (frm.controls['email_id'].touched || frm.controls['email_id'].dirty)">
+                      email_id
+                  </div>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>pan_gst</mat-label>
+                  <input id="demo" required formControlName="pan_gst"  matInput placeholder="PAN/GST">
+                  <div style="color: brown" *ngIf="frm.controls['pan_gst'].invalid &&
+                  (frm.controls['pan_gst'].touched || frm.controls['pan_gst'].dirty)">
+                      pan-gst
+                  </div>
+              </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <mat-form-field appearance="outline" class="example-container">
+                  <mat-label>permanent_address</mat-label>
+                  <input id="demo" required formControlName="permanent_address" matInput placeholder="Permanet Address">
+                  <div style="color: brown" *ngIf="frm.controls['permanent_address'].invalid &&
+                  (frm.controls['permanent_address'].touched || frm.controls['permanent_address'].dirty)">
+                  permanent_address
+                  </div>
+                </mat-form-field>
+              </td>
+                </tr>
+                <tr><td>  <div class="form-group">
                   <label for="sel3">Plan Details</label>
                   <select class="form-control input-sm" id="sel3" formControlName="plan_details" placeholder="plan">
                     <option>1</option>
@@ -148,17 +205,20 @@
           
           <tr>
               <div class="form-group;form-control">
-                  <input type="file" formControlName="photo_graph" name="file" (change)="onFileSelected_Photo_Graph($event)">
+                  <input type="file" id="demo" required formControlName="photo_graph" name="file"
+                   (change)="onFileSelected_Photo_Graph($event)">
                 </div>
                 </tr>
                 <tr>
                     <div class="form-group;form-control">
-                        <input type="file" formControlName="id_proof" name="file" (change)="onFileSelected_Id_Proof($event)">
+                        <input type="file" id="demo" required formControlName="id_proof" name="file" 
+                        (change)="onFileSelected_Id_Proof($event)">
                       </div>
                       </tr>
                       <tr>
                           <div class="form-group;form-control">
-                              <input type="file" formControlName="addr_proof" name="file" (change)="onFileSelected_Addr_Proof($event)">
+                              <input type="file" id="demo" required formControlName="addr_proof" name="file" 
+                              (change)="onFileSelected_Addr_Proof($event)">
                             </div>
                             </tr>
                             &nbsp;

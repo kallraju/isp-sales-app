@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpTokenInterceptService } from './http-token-intercept.service';
 import { LogoutComponent } from './logout/logout.component';
 import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +34,18 @@ import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    BrowserAnimationsModule,
+    MaterialModule
     ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: HttpTokenInterceptService,
     multi: true
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+  ],
 })
 export class AppModule { }
